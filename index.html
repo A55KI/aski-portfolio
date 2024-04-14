@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title>Aski Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <ul class="links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html" onclick="openPopup()">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://github.com/A55KI">Github</a></li>
+                </ul>
+                <a href="#" class="action_btn">Explore</a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://github.com/A55KI">Github</a></li>
+                <li><a href="#" class="action_btn">Explore</a></li>
+            </div>
+        </header>
+
+        <main>
+            <section id="hero">
+                <video autoplay loop muted plays-inline class="back_video">
+                    <source src="aurora.mp4" type="video/mp4">
+                </video>
+                <h1>Welcome</h1>
+                <p>Hello! I'm Aski and here is my portfolio. <br> Please feel free to explore!</p>
+                <button class="action_btn_2" onclick="openPopup()">Intro</button>
+            </section>
+        </main>
+        <!--<footer>
+            <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-discord"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div class="footerBottom">
+                    <p>Copyright &copy;2024, Designed by <span class="designer">Aski</span></p>
+                </div>
+            </div>
+        </footer>-->
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+        </script>
+        <div class="popup" id="popup">
+            <img src="aurora.jpg" alt="aurora">
+            <h2>Intro</h2>
+            <p>I am an IT student of University WSB Merito based in Poznań, currently on the 4th term. I major in Python and programming methods.</p>
+            <button type="button" onclick="closePopup()">Back</button>
+        </div>
+        <script>
+            let popup = document.getElementById("popup");
+
+            function openPopup(){
+                popup.classList.toggle("open-popup");
+            }
+
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+        </script>
+    </body>
+</html>
