@@ -1,1 +1,1 @@
-<h1 align="center">✨ This is my **portfolio** page ✨</h1>
+<h1 align="center">✨ This is my <b>portfolio</b> page ✨</h1>
